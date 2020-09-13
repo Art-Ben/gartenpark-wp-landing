@@ -77,7 +77,7 @@ while( have_posts() ) {
             <div class="customCtaForm__cont">
                 <div class="customCtaForm__instence">
                     <form action="javascript:void(0);" class="customCtaForm__form" method="post"
-                        data-messages='{"error_empty":"Dieses Feld ist leer.","error_valid":"Dieses Feld füllt falsche Daten aus","success":"Vielen Dank für Ihre Nachricht. Wir werden uns in kürze mit Ihnen in Verbindung setzen."}'>
+                        data-messages='{"error_empty":"Dieses Feld ist leer.","error_valid":"Dieses Feld füllt falsche Daten aus","success": "Vielen Dank, dass Sie sich für den Gartenpark Korneuburg interessieren. Wir haben Ihre Anfrage erhalten, werden diese umgehend bearbeiten und uns in Kürze mit Ihnen in Verbindung setzen."}'>
                         <div class="cont">
                             <div class="formGroup spec-between">
                                 <input name="name" id="name" type="text" class="my-inpt spec-w-half" placeholder="Nachname">
@@ -113,7 +113,7 @@ while( have_posts() ) {
                                 <label class="my-checkbox-grp_cont">
                                     Ich habe die <a href="<?= get_home_url(); ?>/datenschutz/" class="link">Datenschutzerklärung</a>
                                     gelesen und akzeptiere sie.
-                                    <input type="checkbox" class="my-checkbox-grp_inpt">
+                                    <input type="checkbox" class="my-checkbox-grp_inpt" id="terms">
                                     <span class="my-checkbox-grp_checkmark"></span>
                                 </label>
                                 <label class="my-checkbox-grp_cont">

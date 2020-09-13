@@ -92,7 +92,7 @@ body {
     @extend .flex-wrap;
     @extend .flex-v-start;
     @extend .flex-h-center;
-    padding: 100px 0 50px 0;
+    padding: 50px 0 50px 0;
     position: relative;
     background-image: url('./images/cta-form-bg.jpg');
     background-size: 100% 100%;
@@ -404,6 +404,14 @@ body {
                 &:last-child {
                     margin-bottom: 0;
                 }
+
+                &.error {
+                    
+                    .my-checkbox-grp_checkmark {
+                        background-color: #ff5b5b;
+                    }
+                    
+                }
             }
 
             .link {
@@ -587,11 +595,11 @@ body {
     .afterSubmitBlock {
         width: 100%;
         display: none;
-        padding: 5px;
+        padding: 7px;
         background: $COLOR_WHITE;
         border-radius: 10px;
         @include font('Semplicita Pro', 12px, $COLOR_GREY, 400, 20px);
-        margin: 25px 0;
+        margin: 0;
 
         &.errors {
             color: #e94015;
@@ -604,8 +612,7 @@ body {
         }
 
         &.success {
-            color: $COLOR_WHITE;
-            background: transparent;
+            background: $COLOR_WHITE;
             font-size: 16px;
             line-height: 24px;
             text-align: left;
@@ -682,13 +689,13 @@ body {
         }
 
         @media screen and (max-width:560px) {
-            .show-mobile {
+            /*.show-mobile {
                 display: block;
             }
 
             .show-desktop {
                 display: none;
-            }
+            }*/
         }
     }
 }

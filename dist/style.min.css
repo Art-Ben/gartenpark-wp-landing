@@ -1980,7 +1980,7 @@ body {
 
 .customCtaForm {
   width: 100%;
-  padding: 100px 0 50px 0;
+  padding: 50px 0 50px 0;
   position: relative;
   background-image: url("./images/cta-form-bg.jpg");
   background-size: 100% 100%;
@@ -2206,6 +2206,8 @@ body {
         margin-bottom: 15px; }
         .customCtaForm__form .my-checkbox-grp_cont:last-child {
           margin-bottom: 0; }
+        .customCtaForm__form .my-checkbox-grp_cont.error .my-checkbox-grp_checkmark {
+          background-color: #ff5b5b; }
       .customCtaForm__form .my-checkbox-grp .link {
         color: #fff;
         font-weight: 700;
@@ -2352,7 +2354,7 @@ body {
   .customCtaForm .afterSubmitBlock {
     width: 100%;
     display: none;
-    padding: 5px;
+    padding: 7px;
     background: #fff;
     border-radius: 10px;
     font-family: "Semplicita Pro", sans-serif;
@@ -2360,7 +2362,7 @@ body {
     color: #707070;
     font-weight: 400;
     line-height: 20px;
-    margin: 25px 0; }
+    margin: 0; }
     .customCtaForm .afterSubmitBlock.errors {
       color: #e94015; }
       .customCtaForm .afterSubmitBlock.errors .er {
@@ -2368,8 +2370,7 @@ body {
         margin-bottom: 10px;
         color: inherit; }
     .customCtaForm .afterSubmitBlock.success {
-      color: #fff;
-      background: transparent;
+      background: #fff;
       font-size: 16px;
       line-height: 24px;
       text-align: left; }
@@ -2419,10 +2420,14 @@ body {
     .heroSection__thumb .show-mobile {
       display: none; }
     @media screen and (max-width: 560px) {
-      .heroSection__thumb .show-mobile {
-        display: block; }
-      .heroSection__thumb .show-desktop {
-        display: none; } }
+      .heroSection__thumb {
+        /*.show-mobile {
+                display: block;
+            }
+
+            .show-desktop {
+                display: none;
+            }*/ } }
 
 .intro {
   width: 100%;

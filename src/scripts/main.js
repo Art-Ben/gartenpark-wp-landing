@@ -64,12 +64,18 @@ jQuery(document).ready(function () {
       $(this).removeClass('error');
     }
     console.log($(this).val());
-  })
+  });
+
+  $('.customCtaForm__form').find('#terms').on('change', function(e){
+    if( $(this).prop('checked') == true ) {
+      $(this).parents('.my-checkbox-grp_cont').removeClass('error');
+    }
+  });
 
   $('.customCtaForm__form').submit(function (e) {
     e.preventDefault();
     var _this = $(this);
-    var name, lastname_elem, newsletter_elem, lastname, tel, email, type, message, button, name_elem, tel_elem, email_elem, type_elem, message_elem;
+    var name, lastname_elem, terms_elem, terms_checked ,newsletter_elem, lastname, tel, email, type, message, button, name_elem, tel_elem, email_elem, type_elem, message_elem;
     button = _this.find('.my-sbm');
 
     name_elem = _this.find('#name');
@@ -79,6 +85,7 @@ jQuery(document).ready(function () {
     type_elem = _this.find('#type');
     message_elem = _this.find('#message');
     newsletter_elem = _this.find('#newsletter_chck');
+    terms_elem = _this.find('#terms');
 
     name = name_elem.val();
     lastname = lastname_elem.val();
@@ -87,12 +94,13 @@ jQuery(document).ready(function () {
     type = type_elem.val();
     message = message_elem.val();
     newsletter_checked = newsletter_elem.prop('checked');
+    terms_checked = terms_elem.prop('checked');
+
+    console.log(terms_elem, terms_checked);
     
     if( newsletter_checked == true ) {
       newsletter_checked = 'checked';
     }
-
-    console.log(newsletter_checked);
 
     var emailRegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -162,6 +170,11 @@ jQuery(document).ready(function () {
       removeErrorClass(email_elem, 'error');
     }
 
+    if( terms_checked !== true ) {
+      error = true;
+      _this.find('#terms').parents('.my-checkbox-grp_cont').addClass('error');
+    }
+
     if (!error) {
       $.ajax({
         url: ajax_object.ajaxurl,
@@ -181,6 +194,7 @@ jQuery(document).ready(function () {
             _this.find('.formGroup:not(.special)').fadeOut(600);
 
             infoCont.fadeIn(600).addClass('success').html(errors_obj.success);
+            console.log(data.clever_reach);
           } else {
             console.log(data.error);
           }
